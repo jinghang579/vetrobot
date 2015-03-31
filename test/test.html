@@ -1,0 +1,111 @@
+<html>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script type="text/javascript">
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return("");
+}
+function updateProtectedLinks(){
+	$("a[href*='sgo.org']").each(function(){
+			var orginLink=$(this).attr("href");
+			var add="https://netforum.avectra.com/eWeb/ValidateLogin.aspx?site=SGO&ReturnUrl="
+			$(this).attr("href",add+orginLink);
+	});
+}
+function reloadwindow(){
+	window.location="http://localhost/vetro-0.3/test.html";
+}
+
+function ssoTokenCheckAndResponse() {
+  var ssoToken=getQueryVariable("ssoToken");
+  var isCheckedSSOToken = getCookie("isCheckedSSOToken");
+ // document.cookie = "isCheckedSSOToken=0";
+    if (ssoToken != "") {
+      updateProtectedLinks();
+      document.cookie="isCheckedSSOToken=0";
+  } else {
+      if (isCheckedSSOToken == "1") {
+          document.cookie="isCheckedSSOToken=0";
+      } else {
+        document.cookie="isCheckedSSOToken=1";
+        window.location.href='https://netforum.avectra.com/eWeb/ValidateLogin.aspx?site=SGO&ReturnUrl=https://netforum.avectra.com/eWeb/DynamicPage.aspx?site=SGO';
+      }
+
+  }  
+}
+
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return("");
+}
+
+
+function getCookie() {
+    var cname="ssoToken";
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) {
+          //alert(c.substring(name.length, c.length));
+          return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function updateProtectedLinks_(){
+  $("a[href*='sgo.org']").each(function(){
+      var orginLink=$(this).attr("href");
+      var add="https://netforum.avectra.com/eWeb/ValidateLogin.aspx?site=SGO&ReturnUrl="
+      $(this).attr("href",add+orginLink);
+  });
+}
+
+
+function ckecksso(){
+  if(getCookie("ssoToken")!=""){
+    updateProtectedLinks();
+  }
+}
+window.onload=function(){
+  var ssoUrl=getQueryVariable("ssoToken");
+  if(ssoUrl!=''){
+    document.cookie="ssoToken="+getQueryVariable("ssoToken");
+  }
+  var ssoValue=getCookie("ssoToken");
+  if(ssoValue!=''){
+    updateProtectedLinks();
+  }
+}
+   
+
+</script>
+
+<body>
+<a id="sgo_link1" href="http://www.sgo.org" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="http://localhost/vetro-0.3/test.html?sso=123123123" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="sgo.orghttp://www.baidu.com" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="http:/sgo.org/www.baidu.com" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="http:sgo.org//www.baidu.com" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="http:/sgo.org/www.baidu.com" value="aaaa">123123123123123</a>
+<a id="sgo_link1" href="http://wwwsgo.org.baidu.com" value="aaaa">123123123123123</a>
+<button onclick="hideSSOTokenFromURL()">Try it</button>
+<button onclick="getCookie()">Try it</button>
+</body>
+</html>

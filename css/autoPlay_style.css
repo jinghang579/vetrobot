@@ -1,0 +1,207 @@
+h4,h5{
+	font-weight:600;
+	font-size: 14px;
+	margin:8px;
+}
+#autoPlay article{
+	width:950px;
+	margin:0 auto;
+}
+.c1{
+	float:left;
+	width:100%;
+	position:relative;
+	top: 28px;
+	height:175px;
+	
+}
+.page{
+	box-shadow: 0px 1px 2px 0px rgba(158, 158, 158, 0.2);
+	background: #fff;
+	border: 1px solid #ddd;
+	height:100%;
+	float:left;
+}
+.link_ {
+	width:70%;
+    border-radius: 2px;
+}
+.up_user{
+	float:left;
+	width:97%;
+	height:59px;
+	overflow: hidden;
+	margin-left:12px;
+	margin-top: 8px;
+}
+.c1 text{
+	margin-left: 12px;
+	font-size: 12px;
+}
+.up_user img{
+	float:left;
+	width:40px;
+	height:40px;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    border-radius: 40px;
+}
+.up_user h5{
+	margin-left:57px;
+	margin-top: 5px;
+}
+.link_title{
+	float:left;
+	width: auto;
+    height: 35;
+    overflow: hidden;
+	border-bottom: 1px dashed #ddd;
+}
+.link_title a h4:hover{
+	color:#eb7350;
+}
+.link_like {
+	width: 95%;
+    height: 30px;
+    float: left;
+    margin-top: 8px;
+    margin-left: 28px;
+}
+.link_key{
+	float:left;
+	font-size: 12px;
+}
+.link_key a{
+	padding: 1px 5px 2px 5px;
+    border: 1px solid #E3F1ED;
+    background-color: #F2F8F2;   
+    border-radius: 3px;
+	margin-left: 18px;
+    position: relative;
+    top: 6;
+}
+.link_key text{
+	color: #4F946E;
+	margin-left: 0px;
+}
+.link_key a text:hover{
+	color:#eb7350;
+}
+.link_like text{
+	font-size:12px;
+	margin-left: 5px;
+    position: relative;
+    bottom: 5px;
+}
+.like_link:before{
+	content: "\e600";
+    color: #d2d2d2;
+    font-family: 'icomoon';
+    font-size: 22px;
+}
+.remove_like_link:before{
+	content: "\e600";
+    color: #ff4949;
+    font-family: 'icomoon';
+    font-size: 22px;
+}
+.ad {
+	margin-left: 18px;
+	width: 263px;
+    border-radius: 2px;
+}
+.ad a h5:hover{
+	color:#eb7350;
+}
+.ad .ad_title{
+	width:90%;
+	border-bottom: 1px dashed #ddd;
+}
+.ad_des{
+	float:left;
+	width:41%;
+	margin-left:18px;
+}
+.ad_des text{
+	margin-left: 0px;
+	float: left;
+    height: 105px;
+    margin-top:5px;
+}
+.ad_des price{
+	font-weight: 600;
+	font-size:14px;
+	position: relative;
+	bottom:0px;
+	color:#eb7350;
+}
+.ad_content{
+	float:left;
+	width:50%;
+	text-align: center;
+}
+.ad_content img{
+	border:none;
+	box-shadow: none;
+	width:100%;
+	height:120px;
+}
+.c2{
+	float:left;
+	margin-top: 48px;
+	width:100%;
+}
+.c3{
+	float:left;
+	margin-top: 18px;
+	width:100%;
+}
+.c3 .red_btn{
+	padding: 7px 12px;
+    display: inline-block;
+	width: 102px;
+	text-align: center;
+    margin-left: 12px;
+    margin-bottom: 6px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    cursor: pointer;
+}
+.link_des{
+	width:80%;
+	height: 90px;
+	padding: 12px;
+}
+.link_des des{
+	margin-top: 18px;
+	font-size: 14px;
+	color:#515151;
+	word-break: break-all;
+}
+
+.next_{
+	width:150px;;
+	height:114px;
+	margin-left:12px;
+}
+.next_ text{
+	font-size: 12px;
+	color:#985D3E;
+	width:95%;
+	height:50px;
+}
+/**********************************************************************************/
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-h0m22i');
+	src:url('../fonts/icomoon.eot?#iefix-h0m22i') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-h0m22i') format('woff'),
+		url('../fonts/icomoon.ttf?-h0m22i') format('truetype'),
+		url('../fonts/icomoon.svg?-h0m22i#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+}
